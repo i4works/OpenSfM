@@ -137,26 +137,26 @@ class Report:
         # title
         self.pdf.set_font("Helvetica", "B", self.title_size)
         self.pdf.set_text_color(*self.mapi_light_green)
-        self.pdf.cell(0, self.margin, "ODM Quality Report", align="C")
+        self.pdf.cell(0, self.margin, "Quality", align="C")
         self.pdf.set_xy(self.margin, self.title_size)
 
         # version number
-        version_file = os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "..", "VERSION")
-        version = ""
-        try:
-            with open(version_file, 'r') as f:
-               version = f.read().strip()
-        except Exception as e:
-            logger.warning("Invalid version file" + version_file + ": " + str(e))
+        #version_file = os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "..", "VERSION")
+        #version = ""
+        #try:
+        #    with open(version_file, 'r') as f:
+        #       version = f.read().strip()
+        #except Exception as e:
+        #    logger.warning("Invalid version file" + version_file + ": " + str(e))
 
         # indicate we don't know the version
-        version = "unknown" if version == "" else version
+        #version = "unknown" if version == "" else version
 
-        self.pdf.set_font("Helvetica", "", self.small_text)
-        self.pdf.set_text_color(*self.mapi_dark_grey)
-        self.pdf.cell(
-            0, self.margin, f"Processed with ODM version {version}", align="R"
-        )
+        #self.pdf.set_font("Helvetica", "", self.small_text)
+        #self.pdf.set_text_color(*self.mapi_dark_grey)
+        #self.pdf.cell(
+        #    0, self.margin, f"Processed with ODM version {version}", align="R"
+        #)
         self.pdf.set_xy(self.margin, self.pdf.get_y() + 2 * self.margin)
 
     def make_dataset_summary(self):
