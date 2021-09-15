@@ -336,7 +336,7 @@ class Report:
             if rows:
                 if table_count > 2:
                     self.add_page_break()
-                self._make_table(["", "Mutal", "Göreceli"], rows, True)
+                self._make_table(["", "Mutlak", "Göreceli"], rows, True)
                 self.pdf.set_xy(self.margin, self.pdf.get_y() + self.margin / 2)
 
         self.pdf.set_xy(self.margin, self.pdf.get_y() + self.margin / 2)
@@ -494,7 +494,7 @@ class Report:
 
         histogram = self.stats["reconstruction_statistics"]["histogram_track_length"]
         start_length, end_length = 2, 10
-        row_length = ["Uzaklık(Fotoğraf)"]
+        row_length = ["Uzak.(Foto.)"]
         for length, _ in sorted(histogram.items(), key=lambda x: int(x[0])):
             if int(length) < start_length or int(length) > end_length:
                 continue
