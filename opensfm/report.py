@@ -355,6 +355,7 @@ class Report:
             logger.warning("Please implement multi-model display")
 
         columns_names = ["", "Min.", "Max.", "Ortalama", "Medyan"]
+        columns = ["", "Min.", "Max.", "Mean", "Median"]
         rows = []
         translations = {
             "Detected": "Tespit Edilen",
@@ -362,7 +363,7 @@ class Report:
         }
         for comp in ["detected_features", "reconstructed_features"]:
             row = [translations[comp.replace("_", " ").replace("features", "").capitalize().strip()]]
-            for t in columns_names[1:]:
+            for t in columns[1:]:
                 row.append(
                     f"{self.stats['features_statistics'][comp][t.replace('.', '').lower()]:.0f}"
                 )
