@@ -284,7 +284,7 @@ class Report:
         table_count = 0
         for error_type in ["gps", "gcp", "3d"]:
             rows = []
-            if error_type = "gps" :
+            if error_type == "gps" :
                 columns_names = ["YKN", "Mean", "Sigma", "Ortalama Karekök Hata"]
             else :
                 columns_names = [error_type.upper(), "Mean", "Sigma", "Ortalama Karekök Hata"]
