@@ -289,7 +289,7 @@ class Report:
             rows = []
             if error_type == "gps" :
                 columns_names = ["GPS", "Mean", "Sigma", "Ortalama Karekök Hata"]
-            else if error_type == "gcp" :
+            elif error_type == "gcp" :
                 columns_names = ["YKN", "Mean", "Sigma", "Ortalama Karekök Hata"]
             else :
                 columns_names = ["3D", "Mean", "Sigma", "Ortalama Karekök Hata"]
