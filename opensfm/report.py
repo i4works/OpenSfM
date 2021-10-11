@@ -229,7 +229,7 @@ class Report:
                 "İnşada kullanılan Öznitelikler",
                 f"{self.stats['features_statistics']['reconstructed_features']['median']:,} öznitelik",
             ],
-            ["Coğrafi Referanslama", " and ".join(geo_string)],
+            ["Coğrafi Referanslama", " ve ".join(geo_string)],
         ]
 
         # Dense (if available)
@@ -288,9 +288,11 @@ class Report:
         for error_type in ["gps", "gcp", "3d"]:
             rows = []
             if error_type == "gps" :
+                columns_names = ["GPS", "Mean", "Sigma", "Ortalama Karekök Hata"]
+            else if error_type == "gcp" :
                 columns_names = ["YKN", "Mean", "Sigma", "Ortalama Karekök Hata"]
             else :
-                columns_names = [error_type.upper(), "Mean", "Sigma", "Ortalama Karekök Hata"]
+                columns_names = ["3D", "Mean", "Sigma", "Ortalama Karekök Hata"]
 
             if "average_error" not in self.stats[error_type + "_errors"]:
                 continue
