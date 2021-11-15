@@ -287,12 +287,12 @@ class Report:
         self.pdf.set_xy(self.margin, self.pdf.get_y() + 2 * self.margin)
 
     def make_gcp_error_details(self):
-        self._make_section("Ground Control Point Error")
+        self._make_section("Yer Kontrol Noktası Hata Oranları")
 
         gcp_stats = self._read_gcp_stats_file("ground_control_points.json")
 
         rows = []
-        column_names = ["ID", "Error X (m)", "Error Y (m)", "Error Z (m)"]
+        column_names = ["ID", "Hata X (m)", "Hata Y (m)", "Hata Z (m)"]
 
         for gcp in gcp_stats:
             row = [gcp["id"]]
